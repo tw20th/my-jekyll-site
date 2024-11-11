@@ -1,3 +1,12 @@
 <footer>
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
-</footer>
+    <div class="container">
+      <p>&copy; {{ "now" | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+      <nav>
+        <ul>
+          <li><a href="{{ site.github_username }}">GitHub</a></li>
+          <li><a href="{{ site.twitter_username }}">Twitter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+  

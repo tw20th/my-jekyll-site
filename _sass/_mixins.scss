@@ -1,0 +1,62 @@
+// 変数のインポート
+@use "variables";
+
+// 全体のスタイル
+body {
+  font-family: variables.$base-font-family;
+  font-size: variables.$base-font-size;
+  color: variables.$text-color;
+  background-color: variables.$background-color;
+  margin: 0;
+  padding: 0;
+}
+
+// ヘッダーのスタイル
+header {
+  background-color: variables.$primary-color;
+  color: #fff;
+  padding: 1em 0;
+  
+  h1 a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  nav ul li {
+    display: inline;
+    margin-right: 15px;
+  }
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+// フッターのスタイル
+footer {
+  background-color: variables.$secondary-color;
+  color: #fff;
+  padding: 1em 0;
+  text-align: center;
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  nav ul li {
+    display: inline;
+    margin-right: 15px;
+  }
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+}

@@ -1,13 +1,22 @@
 // 必要なスタイルの変数やミックスインを定義
-// 必要に応じて _sass/_variables.scss や _sass/_mixins.scss を使用します
-
 @use "sass:color"; // Dart Sassのcolor機能を利用
 
-// 基本の背景とテキスト色
+// カラー変数
+$primary-color: #3498db;
+$secondary-color: #333;
+$text-color: #333;
+$background-color: #f5f5f5;
+$footer-hover-color: color.adjust(#ddd, $lightness: -10%);
+$header-bg-color: color.adjust($primary-color, $lightness: 40%); // 明るい青色
+$highlight-color: color.adjust($primary-color, $lightness: 20%);
+$link-color: #e74c3c; // リンク色を赤に変更
+$shadow-color: color.scale(#000, $lightness: -50%);
+
+// ベーススタイル
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: $background-color;
+    color: $text-color;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -15,7 +24,7 @@ body {
 
 // ヘッダーとフッターのスタイル
 header, footer {
-    background-color: #333;
+    background-color: $header-bg-color;
     color: #fff;
     text-align: center;
     padding: 1em 0;
@@ -27,14 +36,46 @@ header a, footer a {
 }
 
 // ナビゲーションメニュー
+nav {
+    background-color: $secondary-color;
+    padding: 10px 0;
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: $highlight-color;
+}
+
+// モバイル対応
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
 }
 
 // メインコンテンツ
@@ -49,18 +90,18 @@ article {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba($shadow-color, 0.1);
 }
 
 // 見出しのスタイル
 h1, h2, h3, h4, h5, h6 {
-    color: #333;
+    color: $text-color;
     margin-top: 0;
 }
 
 // リンクのスタイル
 a {
-    color: #3498db;
+    color: $link-color;
     text-decoration: none;
 }
 a:hover {
@@ -69,22 +110,5 @@ a:hover {
 
 // フッター内リンクの追加スタイル
 footer a:hover {
-    color: color.adjust(#ddd, $lightness: -10%);
-}
-
-// カスタムカラーの調整（`color.adjust()`と`color.adjust()`の代替）
-$header-bg-color: color.adjust(#333, $lightness: -10%);
-$highlight-color: color.adjust(#3498db, $lightness: 20%);
-$shadow-color: color.adjust(#000, $lightness: -50%);
-
-header, footer {
-    background-color: $header-bg-color;
-}
-
-a {
-    color: $highlight-color;
-}
-
-article {
-    box-shadow: 0 0 10px rgba($shadow-color, 0.1);
+    color: $footer-hover-color;
 }
