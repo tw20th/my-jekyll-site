@@ -112,3 +112,54 @@ a:hover {
 footer a:hover {
     color: $footer-hover-color;
 }
+
+// Contactフォームのスタイル
+.contact {
+    background-color: $background-color;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba($shadow-color, 0.1);
+}
+
+.contact header h1 {
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: $text-color;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact button[type="submit"] {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    width: 100px;
+    margin: 10px auto; // 中央揃え
+}
+
+.contact button[type="submit"]:hover {
+    background-color: $highlight-color;
+}
